@@ -99,7 +99,7 @@ export default function Home() {
 						</Link>
 						<div className="flex items-center space-x-2">
 							<Link
-								href="https://github.com/MuffinTheDragon/daily-habit-tracker"
+								href="https://github.com/yash9657/habittasktracker"
 								target="_blank"
 							>
 								<Image
@@ -149,7 +149,7 @@ export default function Home() {
 									No account required
 								</p>
 							</Trail>
-							<Trail open>
+							{/* <Trail open>
 								<a
 									href="https://www.producthunt.com/posts/daily-habit-tracker?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-daily&#0045;habit&#0045;tracker"
 									target="_blank"
@@ -162,7 +162,7 @@ export default function Home() {
 										height="54"
 									/>
 								</a>
-							</Trail>
+							</Trail> */}
 						</h1>
 						<div className="-mt-4 mb-2 justify-center flex">
 							<Image
@@ -331,7 +331,7 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
-					<div className="border rounded-2xl p-10 md:w-[350px] space-y-4">
+					{/* <div className="border rounded-2xl p-10 md:w-[350px] space-y-4">
 						<h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
 							Premium
 						</h3>
@@ -349,7 +349,7 @@ export default function Home() {
 								<p>Sync data forever</p>
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 				<div className="bg-muted flex flex-col w-full md:items-center p-10 rounded-lg">
 					<h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
@@ -371,7 +371,7 @@ export default function Home() {
 					</h3>
 					<p className="text-muted-foreground">
 						For other questions or concerns, send us an email at
-						rdht.contact@gmail.com
+						yashbhalgat9657@gmail.com
 					</p>
 					<Accordion type="single" collapsible className="space-y-4">
 						<AccordionItem value="item-1">
@@ -475,7 +475,7 @@ export default function Home() {
 					</h4>
 					<p>A simple and minimalistic daily habit tracker app</p>
 					<p className="text-muted-foreground">
-						&copy; dailyhabits.dev
+						&copy; yashbhalgat.netlify.app
 					</p>
 				</div>
 			</div>
