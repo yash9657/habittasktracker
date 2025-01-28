@@ -29,18 +29,6 @@ export default function Home() {
 		sync();
 	}, [syncState?.status]);
 
-	useEffect(() => {
-		if ("Notification" in window) {
-		  Notification.requestPermission().then((permission) => {
-			if (permission === "granted") {
-			  console.log("Notification permission granted.");
-			} else {
-			  console.log("Notification permission denied.");
-			}
-		  });
-		}
-	  }, []);	  
-
 	if (loading) return <Spinner />;
 
 	return <Habits />;
