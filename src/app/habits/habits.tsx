@@ -18,6 +18,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Section } from "./section";
 import { OfflineStatus } from "@/components/offline-status";
+import logo from "@/app/favicon.ico";
 
 export const Habits = () => {
 	const habits = useLiveQuery(() =>
@@ -79,6 +80,42 @@ export const Habits = () => {
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [habits]);
+
+	useEffect(() => {
+		let timeoutId: number; // Timeout ID for clearTimeout
+	  
+		const scheduleNotification = () => {
+		  const now = new Date();
+		  const targetTime = new Date();
+		  targetTime.setHours(20, 0, 0, 0); // 8 PM
+	  
+		  // Calculate time until 8 PM
+		  const delay = targetTime.getTime() - now.getTime();
+		  console.log(delay);
+	  
+		  if (delay > 0) {
+			timeoutId = window.setTimeout(() => {
+			  if (incompletedHabits.length > 0 && Notification.permission === "granted") {
+				console.log('notifying');
+				new Notification("Daily Habit Reminder", {
+				  body: "You still have habits to complete today. Push through and finish strong!",
+				  icon: './favicon.ico'
+				});
+			  }
+			}, delay);
+		  }
+		};
+	  
+		scheduleNotification();
+	  
+		return () => {
+		  // Cleanup timeout
+		  clearTimeout(timeoutId);
+		};
+	  }, [incompletedHabits]);
+	  
+	  
+	  
 
 	if (!habits || !user) return null;
 
